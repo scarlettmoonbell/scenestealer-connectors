@@ -12,7 +12,7 @@ own).
 
 - **checks** — `npm ci`, then `typecheck` (`tsc --noEmit`), `lint`
   (`eslint .`), `format` (`prettier --check .`), `build` (`tsc -p
-  tsconfig.json`), `test` (`vitest run`).
+tsconfig.json`), `test` (`vitest run`).
 
 **Not yet added, tracked as a known gap rather than silently skipped** (see
 the parent project's `ROADMAP.md`): SHA-pinning every `uses:` line to its

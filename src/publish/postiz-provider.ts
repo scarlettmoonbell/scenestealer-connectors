@@ -1,4 +1,8 @@
-import type { PublishProvider, PublishRequest, PublishResult } from "./types.js";
+import type {
+  PublishProvider,
+  PublishRequest,
+  PublishResult,
+} from "./types.js";
 
 /**
  * Calls a self-hosted Postiz instance's API over the network — this class

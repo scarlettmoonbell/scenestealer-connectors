@@ -13,11 +13,18 @@ import type { RemoteFile, StorageConfig, StorageProvider } from "./types.js";
 export class RcloneStorageProvider implements StorageProvider {
   constructor(private readonly rcloneRcUrl: string) {}
 
-  async listNewFiles(_config: StorageConfig, _since?: Date): Promise<RemoteFile[]> {
+  async listNewFiles(
+    _config: StorageConfig,
+    _since?: Date,
+  ): Promise<RemoteFile[]> {
     throw new Error("not implemented — see README.md Status section");
   }
 
-  async download(_config: StorageConfig, _file: RemoteFile, _destPath: string): Promise<void> {
+  async download(
+    _config: StorageConfig,
+    _file: RemoteFile,
+    _destPath: string,
+  ): Promise<void> {
     throw new Error("not implemented — see README.md Status section");
   }
 }

@@ -35,6 +35,12 @@ export type StorageConfig = OAuthStorageConfig | CredentialStorageConfig;
  */
 export interface StorageProvider {
   listNewFiles(config: StorageConfig, since?: Date): Promise<RemoteFile[]>;
-  download(config: StorageConfig, file: RemoteFile, destPath: string): Promise<void>;
-  refreshToken?(config: OAuthStorageConfig): Promise<{ accessToken: string; expiresAt: Date }>;
+  download(
+    config: StorageConfig,
+    file: RemoteFile,
+    destPath: string,
+  ): Promise<void>;
+  refreshToken?(
+    config: OAuthStorageConfig,
+  ): Promise<{ accessToken: string; expiresAt: Date }>;
 }
