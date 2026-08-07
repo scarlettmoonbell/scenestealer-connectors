@@ -25,10 +25,20 @@ rather than hand-rolled per-provider integrations:
 
 ## Status
 
-This repo is at the Phase 1 scaffold stage: the `StorageProvider` and
-`PublishProvider` interfaces are final-shaped, but `RcloneStorageProvider`
-and `PostizPublishProvider` both currently throw `not implemented`. See the
-parent project's
+`PostizPublishProvider` is implemented (2026-07-20) — calls a self-hosted
+Postiz instance's public API (`/public/v1/upload-from-url`, `/public/v1/posts`)
+directly. Its request/response shapes came from reading Postiz's own source
+on GitHub, not just its docs, which don't fully document the create-post
+response or the per-platform `settings` shapes (a gap the project's own
+maintainers acknowledge in
+[issue #717](https://github.com/gitroomhq/postiz-app/issues/717)). Covered
+by a real test suite (`postiz-provider.test.ts`, 13 cases) mocking `fetch` —
+which caught one real bug during development: per-platform settings
+validation ran *after* the upload call instead of before, so bad input
+still triggered a network call first.
+
+`RcloneStorageProvider` still throws `not implemented` — that's the
+remaining Phase 1 scaffold item. See the parent project's
 [build sequence](https://github.com/scarlettmoonbell/scenestealer-app/blob/main/ROADMAP.md)
 for what's next.
 

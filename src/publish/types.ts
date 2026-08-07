@@ -9,6 +9,21 @@ export interface PublishRequest {
   fileUrl: string;
   caption: string;
   scheduledAt?: Date;
+  /**
+   * Fields Postiz requires per platform beyond caption/media, which a
+   * caption alone can't express — e.g. YouTube mandates a title (distinct
+   * from the caption/description) and a visibility setting; Instagram
+   * mandates whether this is a feed post or a Story. Only the block
+   * matching `target.platform` is read. Facebook needs nothing extra —
+   * every field on its Postiz settings DTO is optional.
+   */
+  youtube?: {
+    title: string;
+    visibility: "public" | "private" | "unlisted";
+  };
+  instagram?: {
+    postType: "post" | "story";
+  };
 }
 
 export interface PublishResult {
