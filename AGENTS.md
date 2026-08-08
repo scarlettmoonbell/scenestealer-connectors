@@ -10,6 +10,14 @@ npm run test        # vitest run
 
 No dev server — this is a library package, consumed by `scenestealer-app`.
 
+## Pre-commit hooks
+
+`.pre-commit-config.yaml` mirrors `checks.yml`/`docs.yml`/`actionlint.yml`
+locally, before a commit happens — see the comments at the top of that
+file for exactly what's included. Install once per machine (`brew install
+pipx && pipx install pre-commit`), then activate once per clone:
+`pre-commit install`.
+
 ## Documentation
 
 - [rclone RC (remote control) API](https://rclone.org/rc/) — what
