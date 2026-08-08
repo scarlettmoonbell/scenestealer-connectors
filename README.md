@@ -34,7 +34,7 @@ maintainers acknowledge in
 [issue #717](https://github.com/gitroomhq/postiz-app/issues/717)). Covered
 by a real test suite (`postiz-provider.test.ts`, 13 cases) mocking `fetch` —
 which caught one real bug during development: per-platform settings
-validation ran *after* the upload call instead of before, so bad input
+validation ran _after_ the upload call instead of before, so bad input
 still triggered a network call first.
 
 `RcloneStorageProvider` still throws `not implemented` — that's the

@@ -45,9 +45,7 @@ function mapState(state: PostizPostState): PublishResult["status"] {
  * facebook.dto.ts) on GitHub, not from docs — the public API docs don't
  * fully cover this shape.
  */
-function buildSettings(
-  request: PublishRequest,
-): Record<string, unknown> {
+function buildSettings(request: PublishRequest): Record<string, unknown> {
   switch (request.target.platform) {
     case "youtube": {
       if (!request.youtube) {
@@ -96,10 +94,7 @@ export class PostizPublishProvider implements PublishProvider {
     private readonly postizApiKey: string,
   ) {}
 
-  private async request<T>(
-    path: string,
-    init?: RequestInit,
-  ): Promise<T> {
+  private async request<T>(path: string, init?: RequestInit): Promise<T> {
     const res = await fetch(`${this.postizApiUrl}/public/v1${path}`, {
       ...init,
       headers: {
@@ -201,7 +196,8 @@ export class PostizPublishProvider implements PublishProvider {
     return {
       externalPostId,
       status: mapState(post.state),
-      error: post.state === "ERROR" ? "Postiz reported a publish error" : undefined,
+      error:
+        post.state === "ERROR" ? "Postiz reported a publish error" : undefined,
     };
   }
 }
