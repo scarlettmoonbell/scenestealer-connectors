@@ -10,6 +10,18 @@ npm run test        # vitest run
 
 No dev server — this is a library package, consumed by `scenestealer-app`.
 
+**`dist/` is committed, not gitignored** — deliberately, not an
+oversight. This package is consumed as a `github:owner/repo#main` git
+dependency (no npm registry publish), and pnpm resolves that specifier
+via a tarball download rather than a real `git clone` — confirmed the
+hard way that neither a `prepare` nor a `postinstall` script ever runs
+in that case (no `.git` directory for pnpm to key off, `onlyBuiltDependencies`
+allowlisting notwithstanding), leaving consumers with no `dist/` at all
+otherwise. **Run `npm run build` and commit the result whenever `src/`
+changes** — nothing else builds it for you. Worth automating in CI
+later (build + auto-commit `dist/` on push to `main`) rather than
+relying on remembering this by hand.
+
 ## Pre-commit hooks
 
 `.pre-commit-config.yaml` mirrors `checks.yml`/`docs.yml`/`actionlint.yml`
