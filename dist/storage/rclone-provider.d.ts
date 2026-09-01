@@ -10,8 +10,12 @@ import type { RemoteFile, StorageConfig, StorageProvider } from "./types.js";
  * "Status" section for what's real vs. stubbed.
  */
 export declare class RcloneStorageProvider implements StorageProvider {
-    private readonly rcloneRcUrl;
-    constructor(rcloneRcUrl: string);
-    listNewFiles(_config: StorageConfig, _since?: Date): Promise<RemoteFile[]>;
-    download(_config: StorageConfig, _file: RemoteFile, _destPath: string): Promise<void>;
+  private readonly rcloneRcUrl;
+  constructor(rcloneRcUrl: string);
+  listNewFiles(_config: StorageConfig, _since?: Date): Promise<RemoteFile[]>;
+  download(
+    _config: StorageConfig,
+    _file: RemoteFile,
+    _destPath: string,
+  ): Promise<void>;
 }

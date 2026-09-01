@@ -12,7 +12,7 @@
     "./publish": "./dist/publish/index.js"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && prettier --write dist",
     "prepare": "npm run build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",

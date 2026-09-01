@@ -1,9 +1,10 @@
 # SceneStealer — Connectors
 
-Storage and publish connectors for [SceneStealer](https://github.com/scarlettmoonbell/scenestealer-app) — the atomic,
-reusable layer with no tenant, billing, or dashboard concepts. Genuinely
-useful to anyone who wants "pull video from cloud storage X, push it to
-social platform Y" outside SceneStealer itself.
+Storage and publish connectors for
+[SceneStealer](https://github.com/scarlettmoonbell/scenestealer-app) — the
+atomic, reusable layer with no tenant, billing, or dashboard concepts.
+Genuinely useful to anyone who wants "pull video from cloud storage X, push
+it to social platform Y" outside SceneStealer itself.
 
 Two things live here, both thin wrappers over existing open-source tools
 rather than hand-rolled per-provider integrations:

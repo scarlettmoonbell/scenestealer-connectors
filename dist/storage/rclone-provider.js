@@ -9,14 +9,14 @@
  * "Status" section for what's real vs. stubbed.
  */
 export class RcloneStorageProvider {
-    rcloneRcUrl;
-    constructor(rcloneRcUrl) {
-        this.rcloneRcUrl = rcloneRcUrl;
-    }
-    async listNewFiles(_config, _since) {
-        throw new Error("not implemented — see README.md Status section");
-    }
-    async download(_config, _file, _destPath) {
-        throw new Error("not implemented — see README.md Status section");
-    }
+  rcloneRcUrl;
+  constructor(rcloneRcUrl) {
+    this.rcloneRcUrl = rcloneRcUrl;
+  }
+  async listNewFiles(_config, _since) {
+    throw new Error("not implemented — see README.md Status section");
+  }
+  async download(_config, _file, _destPath) {
+    throw new Error("not implemented — see README.md Status section");
+  }
 }
